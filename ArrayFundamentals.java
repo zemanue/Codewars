@@ -1,6 +1,6 @@
 public class ArrayFundamentals {
     
-    // Can you find the needle in the haystack?
+    // A NEEDLE IN THE HAYSTACK: 
     // Function that takes an array full of junk but containing one "needle"
     // After your function finds the needle it should return a message (as a string) that says:
     // "found the needle at position " plus the index it found the needle
@@ -13,6 +13,7 @@ public class ArrayFundamentals {
             return "no needles found in the haystack ";
     }
 
+    //REVERSED SEQUENCE:
     // Build a function that returns an array of integers from n to 1 where n > 0.
     // Example : n=5 --> [5,4,3,2,1]
     public static int[] reverse(int n){
@@ -23,6 +24,24 @@ public class ArrayFundamentals {
         return array;
     }
 
+    // SENTENCE SMASH:
+    // Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. 
+    // You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. 
+    // Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+    // Example: ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+    public static String smash1(String... words) {
+        String sentence = "";
+        for (int i = 0; i < words.length; i++){
+            sentence += words[i] + " ";
+        }
+        return sentence.trim();
+    }
+
+    //smash() version using String.join() method (optimized in 1 line)
+    public static String smash2(String... words) {
+        return String.join(" ", words);
+    }
+
     public static void main(String[] args) {
         Object[] haystack1 = {"3", "123124234", null, "needle", "world", "hay", 2, "3", true, false};
         Object[] haystack2 = {"283497238987234", "a dog", "a cat", "some random junk", "a piece of hay", "needle", "something somebody lost a while ago"};
@@ -31,6 +50,8 @@ public class ArrayFundamentals {
         System.out.println(findNeedle(haystack2));
         System.out.println(findNeedle(haystack3));
 
+        System.out.println("-" + smash1(new String[] {"hello", "world", "this", "is", "great"}) + "-");
+        System.out.println("-" + smash2(new String[] {"hello", "world", "this", "is", "great"}) + "-");
     }
 
 }
