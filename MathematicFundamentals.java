@@ -12,7 +12,21 @@ public class MathematicFundamentals {
         return number * -1;
     }
 
+    // How good are you really?
+    // You receive an array with your peers' test scores. Now calculate the average and compare your score!
+    // Return true if you're better, else false!
+    // Note: Your points are not included in the array of your class's points. Do not forget them when calculating the average score!
+    public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
+        int sum = 0;
+        for (int i = 0; i < classPoints.length; i++) {
+            sum += classPoints[i];
+        }
+        double average = sum / classPoints.length;
+        return yourPoints > average;
+    }
+
     public static void main(String[] args) {
-        
+        System.out.println(betterThanAverage(new int[] {100, 40, 34, 57, 29, 72, 57, 88}, 75));
+        System.out.println(betterThanAverage(new int[] {99, 45, 34, 89, 56, 67, 78, 89, 90}, 69));
     }
 }
