@@ -25,6 +25,14 @@ public class MathematicFundamentals {
         return yourPoints > average;
     }
 
+    // Will you make it?
+    // Write a function that tells you if it is possible to get to the pump or not, considering 
+    // the distance to the nearest pump (miles), the miles per gallon your car runs on, and the gallons of fuel left
+    public static boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
+        return (distanceToPump / mpg) <= fuelLeft;
+        //also: distanceToPump <= (mpg * fuelLeft);
+    }
+
     public static void main(String[] args) {
         System.out.println(betterThanAverage(new int[] {100, 40, 34, 57, 29, 72, 57, 88}, 75));
         System.out.println(betterThanAverage(new int[] {99, 45, 34, 89, 56, 67, 78, 89, 90}, 69));
