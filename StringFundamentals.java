@@ -49,6 +49,13 @@ public class StringFundamentals {
         }
     }
 
+    // REMOVE STRING SPACES:
+    // Write a function that removes the spaces from the string, then return the resultant string. Examples:
+    // "8 j 8   mBliB8g  imjB8B8  jl  B" -> "8j8mBliB8gimjB8B8jlB"
+    public static String noSpace(final String x) {
+        return x.replace(" ", "");
+    }
+
     public static void main(String[] args) {
         String owner = "Jacob";
 
