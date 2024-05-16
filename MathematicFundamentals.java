@@ -43,6 +43,23 @@ public class MathematicFundamentals {
     public static String binaryAddition(int a, int b){
         return Integer.toBinaryString(a+b);
     }
+
+    // BASIC SEQUENCE PRACTICE:
+    // Generate a sequence with the pattern: "the nth term is the sum of numbers from 0 to n, inclusive".
+    // Example: [ 0,  1,    3,      6,       10,   ...]
+    //            0  0+1  0+1+2  0+1+2+3  0+1+2+3
+    // Complete the function that takes an integer n and returns a list/array of length abs(n) + 1 
+    // of the arithmetic series explained above. 
+    // When < 0 return the sequence with negative terms. Example: -5  -->  [0, -1, -3, -6, -10, -15]
+    public static int[] sumOfN(int n) {
+        int[] sequence = new int[Math.abs(n) + 1];
+        int sum = 0;
+        for (int term = 0; term < sequence.length; term++) {
+            sum += (n >= 0) ? term : -term; // Update sum based on the sign of n
+            sequence[term] = sum; // Set the current term to the sum
+        }
+        return sequence;
+    }
     
     public static void main(String[] args) {
         System.out.println(betterThanAverage(new int[] {100, 40, 34, 57, 29, 72, 57, 88}, 75));
