@@ -64,5 +64,18 @@ public class MathematicFundamentals {
     public static void main(String[] args) {
         System.out.println(betterThanAverage(new int[] {100, 40, 34, 57, 29, 72, 57, 88}, 75));
         System.out.println(betterThanAverage(new int[] {99, 45, 34, 89, 56, 67, 78, 89, 90}, 69));
+
+        int[] sequence1 = sumOfN(10);
+        int[] sequence2 = sumOfN(-7);
+        System.out.print("Sequence 1:");
+        for (int i = 0; i < sequence1.length; i++) {
+            System.out.print(" " + sequence1[i]);
+        }
+        System.out.println("");
+        System.out.print("Sequence 2:");
+        for (int i = 0; i < sequence2.length; i++) {
+            System.out.print(" " + sequence2[i]);
+        }
+        System.out.println("");
     }
 }
