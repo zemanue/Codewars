@@ -56,6 +56,23 @@ public class StringFundamentals {
         return x.replace(" ", "");
     }
 
+    // CONVERT A STRING TO AN NUMBER
+    // We need a function that can transform a string into a number. What ways of achieving this do you know?
+    public static Number stringToNumber(String str) { // Use the superclass Number to return either Integer or Double
+        try {
+            return Integer.valueOf(str);
+            // or: return Integer.parseInt(str);
+        } catch (NumberFormatException e) {
+            try {
+                return Double.valueOf(str);
+                // or: return Double.parseDouble(str);
+            }  
+            catch (NumberFormatException e2) {
+                throw new IllegalArgumentException("Invalid integer input: " + str, e);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         String owner = "Jacob";
 
@@ -66,5 +83,8 @@ public class StringFundamentals {
 
         System.out.println("-" + smash1(new String[] {"hello", "world", "this", "is", "great"}) + "-");
         System.out.println("-" + smash2(new String[] {"hello", "world", "this", "is", "great"}) + "-");
+
+        System.out.println(stringToNumber("123"));
+        System.out.println(stringToNumber("1.23"));
     }
 }
