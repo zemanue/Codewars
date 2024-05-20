@@ -42,6 +42,19 @@ public class ArrayFundamentals {
         return String.join(" ", words);
     }
 
+    // COUNTING SHEEP:
+    // Consider an array/list of sheep where some sheep may be missing from their place. 
+    // We need a function that counts the number of sheep present in the array (true means present).
+    public int countSheeps(Boolean[] arrayOfSheeps) {
+        int sheepCount = 0;
+        for (Boolean sheep : arrayOfSheeps) {
+            if (sheep != null && sheep) { // check that is not null first!
+                sheepCount++;
+            }
+        }
+        return sheepCount;
+    }
+
     public static void main(String[] args) {
         Object[] haystack1 = {"3", "123124234", null, "needle", "world", "hay", 2, "3", true, false};
         Object[] haystack2 = {"283497238987234", "a dog", "a cat", "some random junk", "a piece of hay", "needle", "something somebody lost a while ago"};
@@ -52,6 +65,8 @@ public class ArrayFundamentals {
 
         System.out.println("-" + smash1(new String[] {"hello", "world", "this", "is", "great"}) + "-");
         System.out.println("-" + smash2(new String[] {"hello", "world", "this", "is", "great"}) + "-");
+
+
     }
 
 }
