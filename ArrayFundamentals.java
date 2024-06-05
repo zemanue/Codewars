@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ArrayFundamentals {
     
     // A NEEDLE IN THE HAYSTACK: 
@@ -55,6 +57,25 @@ public class ArrayFundamentals {
         return sheepCount;
     }
 
+        //ASCENDING ORDER (LOWEST POSSIBLE NUMBER):
+    // Your task is to make a function that can take any non-negative integer as an argument and return it 
+    // with its digits in ascending order. Essentially, rearrange the digits to create the lowest possible number.
+    public static int sortAsc(final int num) {
+        char[] numToCharArray = Integer.toString(num).toCharArray(); // convert to string and then to a character array
+        Arrays.sort(numToCharArray); // sort the character array in ascendent order
+        String charArrayToString = new String(numToCharArray); // create a string that represents the sequence of characters
+        return Integer.valueOf(charArrayToString); // return the value of the new string
+    }
+
+    //DESCENDING ORDER (HIGHEST POSSIBLE NUMBER):
+    // Same task as the previous one, but return the integer with its digits in descending order (the highest possible number)
+    // public static int sortDesc(final int num) {
+    //     char[] numToCharArray = Integer.toString(num).toCharArray();
+    //     Arrays.sort(numToCharArray); 
+    //     String charArrayToString = new String(numToCharArray); 
+    //     return Integer.valueOf(charArrayToString);
+    // }
+
     public static void main(String[] args) {
         Object[] haystack1 = {"3", "123124234", null, "needle", "world", "hay", 2, "3", true, false};
         Object[] haystack2 = {"283497238987234", "a dog", "a cat", "some random junk", "a piece of hay", "needle", "something somebody lost a while ago"};
@@ -66,7 +87,8 @@ public class ArrayFundamentals {
         System.out.println("-" + smash1(new String[] {"hello", "world", "this", "is", "great"}) + "-");
         System.out.println("-" + smash2(new String[] {"hello", "world", "this", "is", "great"}) + "-");
 
-
+        System.out.println("83659 in ascending order: " + sortAsc(83659));
+        System.out.println("918273645 in ascending order: " + sortAsc(918273645));
     }
 
 }
